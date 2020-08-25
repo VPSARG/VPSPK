@@ -155,7 +155,7 @@ sistema=$(cat /etc/os-release |grep "PRETTY_NAME" | awk -F = '{print $2}' |sed '
 else
 sistema=Null
 fi
-echo -e "\033[1;31mInstalando SSH/Squid VpsPack Argento $vpspackversion!\033[0m"
+echo -e "\033[1;31mInstalando SSH/Squid Mod 🇦🇷 Argento $vpspackversion!\033[0m"
 clear
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m ::::::::::::::::::::::::::::::::::::::::\033[1;33m"
 echo -e "\033[1;31m====> \033[01;37mScript VpsPack Argento $vpspackversion › By @Pablo_Ezekiel\033[0m"
@@ -311,7 +311,7 @@ echo "http_port 80
 http_port 8080
 http_port 8799
 http_port 3128
-visible_hostname BIGsocks
+visible_hostname ARGENTO
 acl ip dstdomain $ip
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
@@ -350,7 +350,7 @@ echo "http_port 80
 http_port 8080
 http_port 8799
 http_port 3128
-visible_hostname BIGsocks
+visible_hostname ARGENTO
 acl ip dstdomain $ip
 http_access allow ip" > /etc/squid3/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
@@ -373,7 +373,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-echo -e "\033[1;37mPara agregar nuevos hosts teclee \033[1;32maddhost
+echo -e "\033[1;37mPara agregar nuevos hosts digite \033[1;32maddhost
 \033[1;37mPara remover ejecute el comandoo \033[1;32mremoverhost\033[1;37m
 O modifique el archivo /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado, cree un usuario de prueba !! \033[0m"
@@ -397,7 +397,7 @@ echo "http_port 80
 http_port 8080
 http_port 8799
 http_port 3128
-visible_hostname BIGsocks
+visible_hostname ARGENTO
 acl ip dstdomain $ip
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
@@ -420,7 +420,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-echo -e "\033[1;37mPara agregar nuevos hosts teclee \033[1;32maddhost
+echo -e "\033[1;37mPara agregar nuevos hosts Digite \033[1;32maddhost
 \033[1;37mPara remover ejecute el comando \033[1;32mremoverhost\033[1;37m
 O mofifique el archivo /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado, cree un usuario de prueba !! \033[0m"
@@ -445,7 +445,7 @@ echo "http_port 80
 http_port 8080
 http_port 8799
 http_port 3128
-visible_hostname BIGsocks
+visible_hostname ARGENTO
 acl ip dstdomain $ip
 http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
@@ -493,7 +493,7 @@ cache=$(cat /proc/cpuinfo |grep "cache size" |uniq |awk -F : {'print $2'})
 echo -e "\033[1;32mModelo:\033[0m$modelo"
 echo -e "\033[1;32mNucleos:\033[0m$cpucores"
 echo -e "\033[1;32mMemoria Cache:\033[0m$cache"
-echo -e "\033[1;32mArquitetura: \033[0m$(uname -a)"
+echo -e "\033[1;32mArquitectura: \033[0m$(uname -a)"
 echo -e "\n\033[1;30mSistema Operacional\033[0m"
 name=$(cat /etc/os-release |grep PRETTY_NAME |awk -F = {'print $2'})
 codename=$(cat /etc/os-release |grep NAME |awk -F = {'print $2'})
@@ -740,7 +740,7 @@ service fail2ban restart 1> /dev/null 2> /dev/null
 echo "Fail2Ban Instalado"
 }
 function stunnel(){
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/chinomx/covid/master/ssl)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/VPSARG/VPSPK/master/ssl)"
 }
 function herramientas(){
 clear
@@ -1406,7 +1406,7 @@ echo -e "\033[1;37m ● IP VPS:       $ip \033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;30m :::::::::::::::::::::::::::::::::::::::\033[1;33m"
 echo -e "\033[1;37m       VpsPack Argento v. $vpspackversion 🛠️ CONFIGURACIONES 🛠️ \033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m :::::::::::::::::::::::::::::::::::::::\033[1;33m"
-echo -e "\033[1;37mSeleccione una opcion:    Para Salir Ctrl + C\033[1;33m
+echo -e "\033[1;37mSeleccione una opcion:            \033[1;33m
 [\033[1;30m1\033[1;33m] SSH                 ↣\033[1;32m$xssh \033[1;33m
 [\033[1;30m2\033[1;33m] DROPBEAR            ↣\033[1;32m$xdropbear\033[1;33m
 [\033[1;30m3\033[1;33m] STUNNEL4            ↣\033[1;32m$xstunnel \033[1;33m
@@ -1514,7 +1514,7 @@ function plugins(){
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/VPSARG/VPSPK/master/Instalando.sh)"
 }
 function v2rayins(){
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/monsbri/geminis/master/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/VPSARG/Vps-Pack-2.0/master/install)"
 }
 function v2ray(){
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
