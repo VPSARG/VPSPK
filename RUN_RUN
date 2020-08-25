@@ -329,7 +329,7 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara agregar nuevos hosts teclee \033[1;32maddhost
+echo -e "\033[1;37mPara agregar nuevos hosts digite \033[1;32maddhost
 \033[1;37mPara remover ejecute el comando \033[1;32mremoverhost\033[1;37m
 O modifique el archivo /etc/payloads\033[0m"
 echo -e "\033[01;31mFinaliza, cree un usuario de prueba !! \033[0m"
@@ -377,7 +377,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts teclee \033[1;32maddhost
-\033[1;37mPara remover ejecute el comandoo \033[1;32mremoverhost\033[1;37m
+\033[1;37mPara remover ejecute el comando \033[1;32mremoverhost\033[1;37m
 O modifique el archivo /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado, cree un usuario de prueba !! \033[0m"
 echo -e "\033[01;31mPuertos Agregados: \033[0m"
@@ -768,7 +768,7 @@ echo -e "\033[1;37m › IP VPS:       $ip \033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;30m :::::::::::::::::::::::::::::::::::::::\033[1;33m"
 echo -e "\033[1;37m       VPSPack Argento $vpspackversion 🛠️ HERRAMIENTAS 🛠️\033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m #######################################\033[1;33m"
-echo -e "\033[1;37mSeleccione una opcion:    Para Salir Ctrl + C\033[1;33m
+echo -e "\033[1;37mSeleccione una opcion:                        \033[1;33m
 [\033[1;30m1\033[1;33m]   SCANNER \033[1;33m
 [\033[1;30m2\033[1;33m]   BUSCADOR DE HOST / DNS \033[1;33m
 [\033[1;30m3\033[1;33m]   GENERADOR DE PAYLOADS \033[1;33m
@@ -949,10 +949,10 @@ echo "Instalando nginx"
 apt-get -y install nginx
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget --no-check-certificate -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/powermx/autoscript/master/nginx.conf"
+wget --no-check-certificate -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/VPSARG/VPSPK/master/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>1 + 1 = 2</pre>" > /home/vps/public_html/index.html
-wget --no-check-certificate -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/powermx/autoscript/master/vps.conf"
+wget --no-check-certificate -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/VPSARG/VPSPK/master/vps.conf"
 service nginx restart
 echo "✔️ Instalacion Finalizada ✔️"
 echo "Verfique la instalacion accesando a $ip:81"
@@ -1018,7 +1018,7 @@ echo -e "\033[1;37m › IP VPS:       $ip \033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;30m :::::::::::::::::::::::::::::::::::::::\033[1;33m"
 echo -e "\033[1;37m       VpsPack Argento $vpspackversion @ 🛠️ ADMINISTRADOR PROCESOS By Ezekiel🛠️\033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m #######################################\033[1;33m"
-echo -e "\033[1;37mSeleccione una opcion:    Para Salir Ctrl + C\033[1;33m
+echo -e "\033[1;37mSeleccione una opcion:                        \033[1;33m
 [\033[1;30m1\033[1;33m] ENCENDER \033[1;30m([\033[1;31mINICIAR PROCESOS\033[1;30m])\033[1;33m
 [\033[1;30m2\033[1;33m] DETENER \033[1;30m([\033[1;31mDETENER PROCESOS\033[1;30m])\033[1;33m
 [\033[1;30m0\033[1;33m] < REGRESAR                 \033[1;33m"
@@ -1046,7 +1046,7 @@ echo -e "\033[1;37m › Linux Dist:	$distribution › Version: $os_version\033[0
 echo -e "\033[1;37m › IP VPS:       $ip \033[0m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;30m :::::::::::::::::::::::::::::::::::::::\033[1;33m"
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m #######################################\033[1;33m"
-echo -e "\033[1;37mSeleccione una opcion:    Para Salir Ctrl + C\033[1;33m
+echo -e "\033[1;37mSeleccione una opcion:                   \033[1;33m
 [\033[1;30m1\033[1;33m] SSH \033[1;30m(Inicia OpenSSH [\033[1;31mRIESGO\033[1;30m])\033[1;33m
 [\033[1;30m2\033[1;33m] DROPBEAR \033[1;30m(Inicia Dropbear)\033[1;33m
 [\033[1;30m3\033[1;33m] SQUID \033[1;30m(Inicia Squid)\033[1;33m
@@ -1596,10 +1596,10 @@ vpspack;;
 esac
 }
 function plugin(){
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/monsbri/pluginshadow/master/instalando.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/VPSARG/VPSPK/master/Instalando.sh)"
 }
 function v2rayins(){
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/monsbri/geminis/master/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/VPSARG/Vps-Pack-2.0/master/install)"
 }
 function detalhes_usuarios(){
 clear
