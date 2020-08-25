@@ -1,0 +1,32 @@
+#!/bin/bash
+if [ $(id -u) -eq 0 ]
+then
+	echo -e "\033[1;32mNombre nuevo usuario:\033[0;37m"; read -p " " name
+	echo -e "\033[1;32mContraseña nuevo usuario $name:\033[0;37m"; read -p " " pass
+	echo -e "\033[1;32mCuantos dias el usuario $name debe durar:\033[0;37m"; read -p " " daysrnf
+	echo -e "\033[1;32mLimite de conexiones simultaneos:\033[0;37m"; read -p " " limiteuser
+	echo -e "\033[0m"
+	if cat /etc/passwd |grep $name: |grep -vi [a-z]$name |grep -v [0-9]$name > /dev/null
+	then
+		echo -e "\033[1;31mUsuario $name ya existe\033[0m"
+	else
+		valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
+		datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
+		useradd -M -s /bin/false $name -e $valid
+		( echo "$pass";echo "$pass" ) | passwd $name 2> /dev/null
+		limite $name $limiteuser
+		echo -e "\033[1;36mUsuario: \033[0m$name"
+		echo -e "\033[1;36mContraseña: \033[0m$pass"
+		echo -e "\033[1;36mExpira:\033[0m $datexp"
+	    echo "$pass" > /etc/VpsPackdir/senha/$name
+	fi
+else
+	if echo $(id) |grep sudo > /dev/null
+	then
+	echo "Su usuario esta en el grupo root"
+	echo -e "Para para cambiar teclee \033[1;31msudo su\033[0m"
+	echo -e "O ejecute crear usuario como root. \033[1;31msudo crearusuario\033[0m"
+	else
+	echo -e "Usted ya esta como usuario root no necesita (sudo)\nPara ejecutar como root \033[1;31msu\033[0m y digite su contraseña root"
+	fi
+fi
